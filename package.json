@@ -1,0 +1,109 @@
+{
+  "name": "fan-lang",
+  "displayName": "fan 语言支持",
+  "description": "凡语言（fan）的语法高亮、代码片段、注释切换与脚本运行支持",
+  "version": "0.1.0",
+  "publisher": "china-lan-fan",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Snippets"
+  ],
+  "keywords": [
+    "fan",
+    "凡语言",
+    "中文编程语言",
+    "chinese programming language"
+  ],
+  "main": "./out/extension.js",
+  "activationEvents": [
+    "onLanguage:fan"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "fan",
+        "aliases": [
+          "fan",
+          "凡语言",
+          "Fan"
+        ],
+        "extensions": [
+          ".fan"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "fan",
+        "scopeName": "source.fan",
+        "path": "./syntaxes/fan.tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "fan",
+        "path": "./snippets/snippets.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "fan.run",
+        "title": "fan: 运行当前脚本",
+        "icon": "$(play)"
+      },
+      {
+        "command": "fan.repl",
+        "title": "fan: 启动交互式 REPL"
+      }
+    ],
+    "menus": {
+      "editor/title/run": [
+        {
+          "command": "fan.run",
+          "when": "resourceLangId == fan",
+          "group": "navigation"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "fan",
+      "properties": {
+        "fan.executablePath": {
+          "type": "string",
+          "default": "fan",
+          "description": "fan 解释器可执行文件的路径，默认从 PATH 中查找。"
+        },
+        "fan.runInTerminal": {
+          "type": "boolean",
+          "default": true,
+          "description": "是否在集成终端中运行脚本。"
+        },
+        "fan.clearBeforeRun": {
+          "type": "boolean",
+          "default": false,
+          "description": "运行前是否先清空终端。"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "pnpm run build",
+    "compile": "node esbuild.js",
+    "watch": "node esbuild.js --watch",
+    "build": "node esbuild.js --production",
+    "typecheck": "tsc --noEmit",
+    "package": "vsce package --no-dependencies"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "@types/vscode": "^1.75.0",
+    "@vscode/vsce": "^2.24.0",
+    "esbuild": "^0.21.0",
+    "typescript": "^5.4.0"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "comments": {
+    "lineComment": "#"
+  },
+  "brackets": [
+    ["{", "}"],
+    ["[", "]"],
+    ["(", ")"]
+  ],
+  "autoClosingPairs": [
+    { "open": "{", "close": "}" },
+    { "open": "[", "close": "]" },
+    { "open": "(", "close": ")" },
+    { "open": "\"", "close": "\"", "notIn": ["string", "comment"] }
+  ],
+  "surroundingPairs": [
+    ["{", "}"],
+    ["[", "]"],
+    ["(", ")"],
+    ["\"", "\""]
+  ],
+  "folding": {
+    "markers": {
+      "start": "^\\s*(如果|当|遍历|循环|重复|尝试|定义\\s+模型|定义\\s+类)\\b",
+      "end": "^\\s*结束\\s*$"
+    }
+  },
+  "onEnterRules": [
+    {
+      "beforeText": "^\\s*(如果|那么|否则如果|否则|当|遍历|循环|重复|尝试|捕获|定义\\s+(模型|类))\\b.*$",
+      "afterText": "^\\s*(结束|否则如果|否则|捕获)\\b.*$",
+      "action": { "indent": "indentOutdent" }
+    },
+    {
+      "beforeText": "^\\s*(如果|当|遍历|循环|重复|尝试|定义\\s+(模型|类))\\b.*$",
+      "action": { "indent": "indent" }
+    },
+    {
+      "beforeText": "^\\s*(结束|否则如果|否则|捕获)\\b.*$",
+      "action": { "indent": "outdent" }
+    }
+  ]
+}
