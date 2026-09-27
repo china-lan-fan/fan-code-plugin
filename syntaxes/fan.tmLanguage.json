@@ -103,7 +103,7 @@
       "patterns": [
         {
           "name": "keyword.operator.word.fan",
-          "match": "(?<![\\p{L}\\p{N}_])(加|减|乘|除|取余|等于|不等于|小于等于|大于等于|小于|大于|与|或|非)(?![\\p{L}\\p{N}_])"
+          "match": "(?<![\\p{L}\\p{N}_])(加|减|乘|除|取余|等于|不等于|小于等于|大于等于|小于|大于|且|或|非)(?![\\p{L}\\p{N}_])"
         },
         {
           "name": "keyword.operator.symbol.fan",
