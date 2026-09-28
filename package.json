@@ -1,6 +1,6 @@
 {
   "name": "fan-lang",
-  "displayName": "fan 语言支持",
+  "displayName": "凡语言支持",
   "description": "凡语言（fan）的语法高亮、代码片段、注释切换与脚本运行支持",
   "version": "0.1.0",
   "publisher": "china-lan-fan",
@@ -27,11 +27,12 @@
       {
         "id": "fan",
         "aliases": [
-          "fan",
           "凡语言",
+          "fan",
           "Fan"
         ],
         "extensions": [
+          ".凡",
           ".fan"
         ],
         "configuration": "./language-configuration.json"

@@ -1,32 +1,39 @@
-# fan 语言 VS Code 插件
+# 凡语言 VS Code 插件
 
-[凡语言（fan）](https://china-lan-fan.github.io/) 的 Visual Studio Code 支持插件。
+[凡语言](https://china-lan-fan.github.io/) 的 Visual Studio Code 支持插件。
 
 ## 功能
 
-- 语法高亮：中文关键字、中文/符号运算符、类型、内置函数、字符串、数字、注释
-- 代码片段：条件、循环、函数、模型、方法、错误处理、模块导入等常用结构
-- 括号 / 引号自动闭合与配对
-- `#` 注释切换（Ctrl+/）
-- 基于缩进与 `结束` 的代码折叠
-- 一键运行当前 `.fan` 脚本（编辑器右上角运行按钮，或命令面板执行 `fan: 运行当前脚本`）
-- 启动交互式 REPL（命令面板执行 `fan: 启动交互式 REPL`）
+- 语法高亮：中文关键字、中文/符号运算符、类型、内置函数、字符串、数字和注释
+- 代码片段：条件、判断、循环、函数、模型、方法、错误处理和模块导入
+- 括号与引号自动闭合、配对
+- `#` 注释切换（`Ctrl + /`）
+- 基于缩进和 `结束` 的代码折叠
+- 一键运行当前 `.凡` 脚本
+- 启动交互式 REPL
 
 ## 前提
 
-运行脚本功能需要先安装 fan 解释器并确保其在 `PATH` 中可用：
+运行脚本和 REPL 需要先安装凡语言解释器：
 
 ```sh
 fan version
 ```
 
-安装方式见官方文档：https://china-lan-fan.github.io/guide/
+安装方式见[官方文档](https://china-lan-fan.github.io/guide/getting-started)。
+
+## 使用
+
+- 打开 `.凡` 文件后，点击编辑器右上角运行按钮
+- 或打开命令面板，执行：
+  - `fan: 运行当前脚本`
+  - `fan: 启动交互式 REPL`
 
 ## 扩展设置
 
 | 设置项 | 说明 | 默认值 |
-|---|---|---|
-| `fan.executablePath` | fan 解释器路径 | `fan` |
+| --- | --- | --- |
+| `fan.executablePath` | 凡语言解释器路径 | `fan` |
 | `fan.runInTerminal` | 是否在集成终端运行 | `true` |
 | `fan.clearBeforeRun` | 运行前是否清空终端 | `false` |
 
@@ -34,13 +41,11 @@ fan version
 
 ```sh
 pnpm install
-pnpm typecheck   # 类型检查
-pnpm build       # 编译到 out/
+pnpm typecheck
+pnpm build
 ```
 
-在 VS Code 中按 F5 启动扩展开发宿主调试。
-
-打包：
+按 `F5` 启动扩展开发宿主。打包 VSIX：
 
 ```sh
 pnpm package

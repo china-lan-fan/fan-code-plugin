@@ -1,7 +1,7 @@
 import * as vscode from "vscode";
 import { execFileSync } from "node:child_process";
 
-const TERMINAL_NAME = "fan";
+const TERMINAL_NAME = "凡语言";
 
 let runTerminal: vscode.Terminal | undefined;
 
@@ -30,7 +30,7 @@ async function ensureExecutable(): Promise<string | undefined> {
     return path;
   }
   const choice = await vscode.window.showErrorMessage(
-    `未找到可用的 fan 解释器：${path}。请先安装 fan，或在设置 fan.executablePath 中指定其路径。`,
+    `未找到可用的解释器：${path}。请先安装凡语言，或在设置 fan.executablePath 中指定其路径。`,
     "打开安装文档",
     "打开设置"
   );
@@ -61,7 +61,7 @@ function getRunTerminal(clear: boolean): vscode.Terminal {
 async function runCurrentFile(): Promise<void> {
   const editor = vscode.window.activeTextEditor;
   if (!editor || editor.document.languageId !== "fan") {
-    await vscode.window.showWarningMessage("请先在编辑器中打开一个 .fan 文件。");
+    await vscode.window.showWarningMessage("请先在编辑器中打开一个凡语言文件。");
     return;
   }
 
@@ -90,7 +90,7 @@ async function startRepl(): Promise<void> {
   if (!path) {
     return;
   }
-  const terminal = vscode.window.createTerminal({ name: "fan REPL" });
+  const terminal = vscode.window.createTerminal({ name: "凡语言 REPL" });
   terminal.show(true);
   terminal.sendText(path, true);
 }
