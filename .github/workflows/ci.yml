@@ -1,0 +1,37 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+      - name: 安装依赖
+        run: pnpm install --frozen-lockfile
+      - name: 类型检查
+        run: pnpm typecheck
+      - name: 构建
+        run: pnpm build
+      - name: 打包 VSIX
+        run: pnpm package
+      - name: 上传 VSIX
+        uses: actions/upload-artifact@v4
+        with:
+          name: fan-lang
+          path: fan-lang-*.vsix
+          retention-days: 7

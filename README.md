@@ -12,6 +12,12 @@
 - 一键运行当前 `.凡` 脚本
 - 启动交互式 REPL
 
+## 下载和安装
+
+可以从 [最新构建](https://github.com/china-lan-fan/fan-code-plugin/releases/tag/latest) 下载 `.vsix` 文件。
+
+在 VS Code 中选择扩展面板右上角的“从 VSIX 安装”，也可以通过命令行安装下载得到的 `.vsix` 文件。
+
 ## 前提
 
 运行脚本和 REPL 需要先安装凡语言解释器：

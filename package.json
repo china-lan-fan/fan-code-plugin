@@ -5,6 +5,10 @@
   "version": "0.1.0",
   "publisher": "china-lan-fan",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/china-lan-fan/fan-code-plugin.git"
+  },
   "engines": {
     "vscode": "^1.75.0"
   },
