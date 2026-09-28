@@ -1,6 +1,6 @@
 # 凡语言 VS Code 插件
 
-[凡语言](https://china-lan-fan.github.io/) 的 Visual Studio Code 支持插件。
+[凡语言](https://china-lang-fan.github.io/) 的 Visual Studio Code 支持插件。
 
 ## 功能
 
@@ -14,7 +14,7 @@
 
 ## 下载和安装
 
-可以从 [最新构建](https://github.com/china-lan-fan/fan-code-plugin/releases/tag/latest) 下载 `.vsix` 文件。
+可以从 [最新构建](https://github.com/china-lang-fan/fan-code-plugin/releases/tag/latest) 下载 `.vsix` 文件。
 
 在 VS Code 中选择扩展面板右上角的“从 VSIX 安装”，也可以通过命令行安装下载得到的 `.vsix` 文件。
 
@@ -26,7 +26,7 @@
 fan version
 ```
 
-安装方式见[官方文档](https://china-lan-fan.github.io/guide/getting-started)。
+安装方式见[官方文档](https://china-lang-fan.github.io/guide/getting-started)。
 
 ## 使用
 

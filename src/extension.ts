@@ -41,7 +41,7 @@ async function ensureExecutable(): Promise<string | undefined> {
     );
   } else if (choice === "打开安装文档") {
     await vscode.env.openExternal(
-      vscode.Uri.parse("https://china-lan-fan.github.io/guide/")
+      vscode.Uri.parse("https://china-lang-fan.github.io/guide/")
     );
   }
   return undefined;
